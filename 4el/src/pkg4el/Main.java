@@ -1,6 +1,8 @@
 package pkg4el;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -31,12 +33,25 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-            Button btn1 = new Button("Olá mundinho");
+        
+            Parent root = FXMLLoader.load(getClass().getResource("View.fxml"));
+            
+            
+            
+            /* Colocar botões apartir do java
+            Button btnPlay = new Button("Jogar");
+            Button btnAbout = new Button("Sobre");
+            Button btnRules = new Button("Regras");
+            Button btnCredits = new Button("Créditos");
+            
             StackPane root = new StackPane();
-            root.getChildren().add(btn1);
+            root.getChildren().add(btnPlay);
+            root.getChildren().add(btnAbout);
+            root.getChildren().add(btnRules);
+            root.getChildren().add(btnCredits);*/
             Scene scene = new Scene(root, 600,400);
             stage.setScene(scene);
-            stage.setTitle("Teste");
+            stage.setTitle("4el");
             stage.show();
         }
     
