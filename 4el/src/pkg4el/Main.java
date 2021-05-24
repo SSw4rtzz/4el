@@ -34,11 +34,21 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-            Parent root = FXMLLoader.load(getClass().getResource("View.fxml"));
-            
-            
-            
-            /* Colocar botões apartir do java
+            Parent main = FXMLLoader.load(getClass().getResource("ViewMain.fxml"));
+            Scene mainScene = new Scene(main, 600,400);
+            stage.setScene(mainScene);
+            stage.setTitle("4el");
+            stage.show();
+        }
+    
+    public static void main(String[] args){
+        launch(args);
+    }
+    
+}
+
+
+/* Colocar botões apartir do java
             Button btnPlay = new Button("Jogar");
             Button btnAbout = new Button("Sobre");
             Button btnRules = new Button("Regras");
@@ -49,14 +59,3 @@ public class Main extends Application {
             root.getChildren().add(btnAbout);
             root.getChildren().add(btnRules);
             root.getChildren().add(btnCredits);*/
-            Scene scene = new Scene(root, 600,400);
-            stage.setScene(scene);
-            stage.setTitle("4el");
-            stage.show();
-        }
-    
-    public static void main(String[] args){
-        launch(args);
-    }
-    
-}

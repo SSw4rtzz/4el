@@ -36,15 +36,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg4el.Controller">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg4el.ControllerMain">
     <children>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
             <children>
-                <Button layoutX="289.0" layoutY="116.0" mnemonicParsing="false" onAction="#test" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Jogar" />
-                <Button layoutX="285.0" layoutY="157.0" mnemonicParsing="false" onAction="#test" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Acerca" />
-                <Button layoutX="282.0" layoutY="246.0" mnemonicParsing="false" onAction="#test" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Créditos" />
-                <Button layoutX="286.0" layoutY="200.0" mnemonicParsing="false" onAction="#test" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Regras" />
-                <Button layoutX="295.0" layoutY="328.0" mnemonicParsing="false" onAction="#test" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Sair" />
+                <Button layoutX="248.0" layoutY="55.0" mnemonicParsing="false" onAction="#jogar" prefHeight="56.0" prefWidth="131.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Jogar" />
+                <Button layoutX="248.0" layoutY="124.0" mnemonicParsing="false" onAction="#acerca" prefHeight="56.0" prefWidth="131.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Acerca" />
+                <Button layoutX="247.0" layoutY="192.0" mnemonicParsing="false" onAction="#regras" prefHeight="56.0" prefWidth="131.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Regras" />
+                <Button layoutX="247.0" layoutY="258.0" mnemonicParsing="false" onAction="#creditos" prefHeight="56.0" prefWidth="131.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Créditos" />
+                <Button fx:id="exit" cancelButton="true" layoutX="290.0" layoutY="334.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="46.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Sair" />
             </children>
         </AnchorPane>
     </children>
