@@ -20,36 +20,34 @@
  *                                                                 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-package pkg4el;
 
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-import pkg4el.game.Game;
+package pkg4el.game;
 
+public class Game {
+    int board[][] = new int[6][7];
 
-public class Main extends Application {
-
-    @Override
-    public void start(Stage stage) throws Exception {
-            //Chama o ficheiro do cenário e cria o cenário
-            Parent main = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewMain.fxml"));
-            Scene mainScene = new Scene(main, 900,600);
-            stage.setScene(mainScene);
-            stage.setTitle("4el");
-            stage.show();
+    //Cria uma matriz 6 por 7 e consuante o jogador e a posição altera-se
+    public void boardTest(int player, int pos){    
+    int ocup = 5;
+    int peca = 0;
+         for (int l = 0; l < board.length; l++){  
+            for (int c = 0; c < board.length; c++){
+                if(c == pos && peca == 0){
+                    if(board[5][pos]==0){
+                        board[5][pos] = player;
+                        peca = 1; //Indicação de que já foi colocado
+                      // Procura inserir a peça num espaço livre da mesma coluna
+                    } else if(peca == 0) {
+                        while(board[ocup][pos]!=0){
+                            ocup--;
+                        };
+                        board[ocup][pos]=player;
+                        peca = 1;
+                    }
+                }
+            System.out.print(board[l][c] + " ");//imprime caracter a caracter  
+            }
+           System.out.println(" ");
         }
-    
-    public static void main(String[] args){
-        launch(args);
-        //Game game = new Game();
-        //game.boardTest(2, 1);
-    
     }
 }
