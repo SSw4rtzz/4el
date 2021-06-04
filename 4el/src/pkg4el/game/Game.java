@@ -27,10 +27,10 @@ public class Game {
     int board[][] = new int[6][7];
 
     //Cria uma matriz 6 por 7 e consuante o jogador e a posição altera-se
-    public void boardTest(int player, int pos){    
+    public int[][] boardTest(int player, int pos){
     int ocup = 5;
     int peca = 0;
-         for (int l = 0; l < board.length; l++){  
+         for (int l = 0; l < board.length; l++){
             for (int c = 0; c < board.length; c++){
                 if(c == pos && peca == 0){
                     if(board[5][pos]==0){
@@ -45,9 +45,10 @@ public class Game {
                         peca = 1;
                     }
                 }
-            System.out.print(board[l][c] + " ");//imprime caracter a caracter  
+            System.out.print(board[l][c] + " "); //imprime caracter a caracter  
             }
            System.out.println(" ");
         }
+         return board;
     }
 }
