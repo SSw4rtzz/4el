@@ -53,11 +53,11 @@ public class ControllerGame implements Initializable{
     void inserirPecas(ActionEvent event){
         Button p1 = (Button) event.getSource();
         String textButton = p1.getText();
-        int nButton = Integer.parseInt(textButton); 
+        int nButton = Integer.parseInt(textButton); //Numero do botão
         System.out.print(nButton);
          
             event.getSource();
-            root.add(new Circle(200, 200, 10, Color.WHITE), nButton, 0);
+            root.add(new Circle(200, 200, 10, Color.WHITE), nButton, 4);
             event.consume();
             count+=1;
         
