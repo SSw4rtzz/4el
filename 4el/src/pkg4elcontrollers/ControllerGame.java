@@ -65,18 +65,18 @@ public class ControllerGame implements Initializable{
                     break;
                 case 4: 
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos5);
-                    game.boardTest(activePlayer, 3);
+                    game.boardTest(activePlayer, 4);
                     pos5-=1;
                     break;
                 case 5: 
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos6);
-                    game.boardTest(activePlayer, 3);
+                    game.boardTest(activePlayer, 5);
                     pos6-=1;
                     break;
                 case 6: 
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos7);
-                    game.boardTest(activePlayer, 3);
-                    pos6-=1;
+                    game.boardTest(activePlayer, 6);
+                    pos7-=1;
                     break;
                 }
             

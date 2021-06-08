@@ -32,29 +32,40 @@
                 <RowConstraints minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <Label fx:id="label" alignment="CENTER" layoutX="8.0" layoutY="14.0" lineSpacing="8.0" prefHeight="26.0" prefWidth="625.0" text="1" textAlignment="CENTER" textFill="WHITE" />
-            <Button fx:id="p1" layoutX="83.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="269.0" prefWidth="69.0" text="0">
+            <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" lineSpacing="8.0" prefHeight="26.0" prefWidth="625.0" text="1" textAlignment="CENTER" textFill="WHITE" />
+            <Button fx:id="p1" layoutX="83.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button layoutX="165.0" layoutY="95.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="269.0" prefWidth="82.0" text="1">
+            <Button layoutX="152.0" layoutY="96.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="1">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button layoutX="247.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="269.0" prefWidth="82.0" text="2">
+            <Button layoutX="221.0" layoutY="95.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="2">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="329.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="269.0" prefWidth="75.0" text="3">
+            <Button layoutX="289.0" layoutY="95.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="3">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="431.0" layoutY="41.0" mnemonicParsing="false" onAction="#inserirPecas" text="4">
+            <Button layoutX="358.0" layoutY="96.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="4">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+            </Button>
+            <Button layoutX="427.0" layoutY="96.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="5">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="496.0" layoutY="96.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
                 <Button fx:id="exit" cancelButton="true" layoutX="569.0" layoutY="24.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Sair" />
             </children>
         </AnchorPane>
