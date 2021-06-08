@@ -9,29 +9,31 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg4elcontrollers.ControllerGame">
+<VBox prefHeight="547.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg4elcontrollers.ControllerGame">
     <children>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="591.0" prefWidth="640.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS">
             <children>
-            <GridPane fx:id="root" alignment="CENTER" focusTraversable="true" gridLinesVisible="true" layoutX="83.0" layoutY="95.0" mouseTransparent="true" prefHeight="269.0" prefWidth="486.0">
+            <GridPane fx:id="root" alignment="CENTER" focusTraversable="true" gridLinesVisible="true" layoutX="83.0" layoutY="95.0" mouseTransparent="true" prefHeight="396.0" prefWidth="486.0">
               <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="50.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="50.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-                <Button fx:id="exit" cancelButton="true" layoutX="290.0" layoutY="384.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="46.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Sair" />
             <Label fx:id="label" alignment="CENTER" layoutX="8.0" layoutY="14.0" lineSpacing="8.0" prefHeight="26.0" prefWidth="625.0" text="1" textAlignment="CENTER" textFill="WHITE" />
-            <Button fx:id="p1" layoutX="83.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="269.0" prefWidth="82.0" text="0">
+            <Button fx:id="p1" layoutX="83.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="269.0" prefWidth="69.0" text="0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
@@ -42,16 +44,18 @@
             <Button layoutX="247.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="269.0" prefWidth="82.0" text="2">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+            </Button>
             <Button layoutX="329.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="269.0" prefWidth="75.0" text="3">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+            </Button>
             <Button layoutX="431.0" layoutY="41.0" mnemonicParsing="false" onAction="#inserirPecas" text="4">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="mostra" layoutX="124.0" layoutY="388.0" mnemonicParsing="false" onAction="#inserirPecas" text="1" />
+                <Button fx:id="exit" cancelButton="true" layoutX="569.0" layoutY="24.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: #ffffff;" text="Sair" />
             </children>
         </AnchorPane>
     </children>

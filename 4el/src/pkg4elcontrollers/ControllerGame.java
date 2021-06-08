@@ -1,18 +1,11 @@
 package pkg4elcontrollers;
 
-import java.awt.List;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -32,7 +25,7 @@ public class ControllerGame implements Initializable{
     @FXML private GridPane root;    
     
     Game game = new Game();
-    int pos1=4; int pos2=4; int pos3=4; int pos4=4; //Posição de jogo
+    int pos1=5; int pos2=5; int pos3=5; int pos4=5; int pos5=5; int pos6=5; int pos7=5; //Posição de jogo
     
     Paint player1Color = Color.BLUE;
     Paint player2Color = Color.RED;
@@ -48,33 +41,43 @@ public class ControllerGame implements Initializable{
         int nButton = Integer.parseInt(textButton); //Numero do botão
             event.getSource();
             
-            
             //Imprime os botões
             switch(nButton){
                 case 0: 
-                    root.add(new Circle(300, 300, 25, activePlayerColor), nButton, pos1);
-                    event.consume(); //Penso que seja para aplicar as peças, verificar *********************
+                    root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos1);                    
                     game.boardTest(activePlayer, 0);
                     pos1-=1;
                     break;
                 case 1: 
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos2);
-                    event.consume();
                     game.boardTest(activePlayer, 1);
                     pos2-=1;
                     break;
                 case 2: 
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos3);
-                    event.consume();
                     game.boardTest(activePlayer, 2);
                     pos3-=1;
                     break;
                 case 3: 
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos4);
-                    event.consume();
                     game.boardTest(activePlayer, 3);
                     pos4-=1;
-                    break;        
+                    break;
+                case 4: 
+                    root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos5);
+                    game.boardTest(activePlayer, 3);
+                    pos5-=1;
+                    break;
+                case 5: 
+                    root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos6);
+                    game.boardTest(activePlayer, 3);
+                    pos6-=1;
+                    break;
+                case 6: 
+                    root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos7);
+                    game.boardTest(activePlayer, 3);
+                    pos6-=1;
+                    break;
                 }
             
             changeActivePlayer();
