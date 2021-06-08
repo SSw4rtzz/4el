@@ -51,4 +51,38 @@ public class Game {
         }
          return board;
     }
+
+
+//Determina quando e que jogador ganhou
+public boolean winner(int player) {
+        int count;
+        
+        //checka colunas
+        for (int y = 0; y < board.length; y++) {
+            count = 0;
+            for (int x = 0; x < board[y].length; x++) {
+                if (board[y][x] == player) {
+                    count++;
+                }
+            }
+            if (count == 4) {
+                return true;
+            }
+        }
+        
+        //checka linhas
+        for (int x = 0; x < board[0].length; x++) {
+            count = 0;
+            for (int y = 0; y < board.length; y++) {
+                if (board[y][x] == player) {
+                    count++;
+                }
+            }
+            if (count == 4) {
+                return true;
+            }
+        }
+        return false;
+
+    }
 }

@@ -43,9 +43,6 @@ public class Main extends Application {
         }
     
     public static void main(String[] args){
-        launch(args);
-        //Game game = new Game();
-        //game.boardTest(2, 1);
-    
+        launch(args);    
     }
 }

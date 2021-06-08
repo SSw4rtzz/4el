@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import pkg4el.game.Game;
@@ -27,77 +28,75 @@ import pkg4el.game.Game;
 
 
 public class ControllerGame implements Initializable{
-    private int currentBoard = 0 ;
     
-    private String a = "Teste";
-    
-    @FXML private GridPane root;
-    
-    @FXML
-    private ImageView pl1 = new ImageView(("/pkg4el/assets/peca_azul.png"));
-    private BooleanProperty pecavisivel = new SimpleBooleanProperty(false);
-    
-    
+    @FXML private GridPane root;    
     
     Game game = new Game();
-    int count =0;
-
+    int pos1=4; int pos2=4; int pos3=4; int pos4=4; //Posição de jogo
     
-
+    Paint player1Color = Color.BLUE;
+    Paint player2Color = Color.RED;
+    Paint activePlayerColor = player1Color;
+    int player1 = 1; int player2 = 2;
+    int activePlayer = player1;
     
-    //Muda o texto da label ao carregar no botão mostrar
-    @FXML Button mostra;
     @FXML
-
     //Insere as pecas no grid consoante o numero presente no text do botão
     void inserirPecas(ActionEvent event){
         Button p1 = (Button) event.getSource();
-        String textButton = p1.getText();
+        String textButton = p1.getText(); //get texto do botão
         int nButton = Integer.parseInt(textButton); //Numero do botão
-        System.out.print(nButton);
-         
             event.getSource();
-            root.add(new Circle(200, 200, 10, Color.WHITE), nButton, 4);
-            event.consume();
-            count+=1;
+            
+            
+            //Imprime os botões
+            switch(nButton){
+                case 0: 
+                    root.add(new Circle(300, 300, 25, activePlayerColor), nButton, pos1);
+                    event.consume(); //Penso que seja para aplicar as peças, verificar *********************
+                    game.boardTest(activePlayer, 0);
+                    pos1-=1;
+                    break;
+                case 1: 
+                    root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos2);
+                    event.consume();
+                    game.boardTest(activePlayer, 1);
+                    pos2-=1;
+                    break;
+                case 2: 
+                    root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos3);
+                    event.consume();
+                    game.boardTest(activePlayer, 2);
+                    pos3-=1;
+                    break;
+                case 3: 
+                    root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos4);
+                    event.consume();
+                    game.boardTest(activePlayer, 3);
+                    pos4-=1;
+                    break;        
+                }
+            
+            changeActivePlayer();
         
-        
-        if(pecavisivel.get()){
-            pecavisivel.set(false);
+    }
+    
+    //Para colocar depois noutra Class
+    
+
+    //Troca de jogador de forma alternada
+    public void changeActivePlayer() {
+        if (game.winner(activePlayer)){
+            System.out.print("Jogador " + activePlayer + " ganhou!");
+        } else if (activePlayer == player1) {
+            activePlayer = player2;
+            activePlayerColor = player2Color;
         } else {
-            pecavisivel.set(true);
+            activePlayer = player1;
+            activePlayerColor = player1Color;
         }
-        
-        
     }
     
-    
-    //Funções para alterar a matriz em relação ao jogo
-    public void test0(){
-        game.boardTest(1, 0);
-        
-        System.out.println("Acerca");
-    }
-    
-    public void test1(){
-        game.boardTest(1, 1);
-        System.out.println("Acerca");
-    }
-    
-    public void test2(){
-        game.boardTest(1, 2);
-        System.out.println("Acerca");
-    }
-    
-    public void test3(){
-        game.boardTest(1, 3);
-        System.out.println("Acerca");
-    }
-    
-    public void test4(){
-        game.boardTest(1, 4);
-        System.out.println("Acerca");
-    }
 
     //Sai do programa
     public Button exit;
@@ -106,8 +105,6 @@ public class ControllerGame implements Initializable{
     stage.close();
     }
     
-    public void initialize(URL location, ResourceBundle arg1) {
-        pl1.visibleProperty().bind(pecavisivel);
-    }
+    public void initialize(URL location, ResourceBundle arg1) {}
  
 }
