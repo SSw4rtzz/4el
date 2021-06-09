@@ -24,14 +24,14 @@
 package pkg4el.game;
 
 public class Game {
-    int board[][] = new int[6][7];
+    int board[][] = new int[6][8];
 
     //Cria uma matriz 6 por 7 e consuante o jogador e a posição altera-se
     public int[][] boardTest(int player, int pos){
     int ocup = 5;
     int peca = 0;
          for (int l = 0; l < board.length; l++){
-            for (int c = 0; c < board.length; c++){
+            for (int c = 0; c < board.length+1; c++){
                 if(c == pos && peca == 0){
                     if(board[5][pos]==0){
                         board[5][pos] = player;
@@ -54,35 +54,30 @@ public class Game {
 
 
 //Determina quando e que jogador ganhou
-public boolean winner(int player) {
-        int count;
-        
+public boolean winner(int player) {        
         //checka colunas
         for (int y = 0; y < board.length; y++) {
-            count = 0;
             for (int x = 0; x < board[y].length; x++) {
-                if (board[y][x] == player) {
-                    count++;
+                if (board[y][x] == player && board[y][x+1] == player && board[y][x+2] == player && board[y][x+3] == player) {
+                        return true;
                 }
-            }
-            if (count == 4) {
-                return true;
             }
         }
-        
         //checka linhas
-        for (int x = 0; x < board[0].length; x++) {
-            count = 0;
+        for (int x = 0; x < board.length; x++) {
             for (int y = 0; y < board.length; y++) {
-                if (board[y][x] == player) {
-                    count++;
+               if (board[y][x] == player && board[y-1][x] == player && board[y-2][x] == player && board[y-3][x] == player) {
+                    return true;
                 }
-            }
-            if (count == 4) {
-                return true;
             }
         }
         return false;
+    }
 
+    public void testec(int y, int x){
+        System.out.print("Erro");
+    }
+    public void testel(){
+        System.out.print("Erro");
     }
 }
