@@ -44,44 +44,76 @@ public class ControllerGame implements Initializable{
             //Imprime os botões
             switch(nButton){
                 case 0:
+                    try{
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos1);                    
                     game.boardTest(activePlayer, 0);
                     pos1-=1;
+                    changeActivePlayer();
                     break;
+                     } catch(ArrayIndexOutOfBoundsException exception) {
+                            break;
+                        }
                 case 1:
+                    try{
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos2);
                     game.boardTest(activePlayer, 1);
                     pos2-=1;
+                    changeActivePlayer();
                     break;
+                     } catch(ArrayIndexOutOfBoundsException exception) {
+                            break;
+                        }
                 case 2:
+                    try{
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos3);
                     game.boardTest(activePlayer, 2);
                     pos3-=1;
+                    changeActivePlayer();
                     break;
+                     } catch(ArrayIndexOutOfBoundsException exception) {
+                            break;
+                        }
                 case 3:
+                    try{
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos4);
                     game.boardTest(activePlayer, 3);
                     pos4-=1;
+                    changeActivePlayer();
                     break;
+                     } catch(ArrayIndexOutOfBoundsException exception) {
+                            break;
+                        }
                 case 4:
+                    try{
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos5);
                     game.boardTest(activePlayer, 4);
                     pos5-=1;
+                    changeActivePlayer();
                     break;
+                     } catch(ArrayIndexOutOfBoundsException exception) {
+                            break;
+                        }
                 case 5:
+                    try{
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos6);
                     game.boardTest(activePlayer, 5);
                     pos6-=1;
+                    changeActivePlayer();
                     break;
+                     } catch(ArrayIndexOutOfBoundsException exception) {
+                            break;
+                        }
                 case 6:
-                    //if(pos7>=0) {
+                    try{
                         root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos7);
                         game.boardTest(activePlayer, 6);
                         pos7-=1;
+                        changeActivePlayer();
                         break;
-                        //}                 
+                        } catch(ArrayIndexOutOfBoundsException exception) {
+                            break;
+                        }
                     }
-            changeActivePlayer();
                 }
     
     //Para colocar depois noutra Class

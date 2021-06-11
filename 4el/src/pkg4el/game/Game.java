@@ -54,30 +54,23 @@ public class Game {
 
 
 //Determina quando e que jogador ganhou
-public boolean winner(int player) {        
+public boolean winner(int player) {
         //checka colunas
-        for (int y = 0; y < board.length; y++) {
-            for (int x = 0; x < board[y].length; x++) {
-                if (board[y][x] == player && board[y][x+1] == player && board[y][x+2] == player && board[y][x+3] == player) {
+        for (int l = 0; l < board.length; l++) {
+            for (int c = 0; c < board[l].length; c++) {
+                if (board[l][c] == player && board[l][c+1] == player && board[l][c+2] == player && board[l][c+3] == player) {
                         return true;
                 }
             }
         }
         //checka linhas
-        for (int x = 0; x < board.length; x++) {
-            for (int y = 0; y < board.length; y++) {
-               if (board[y][x] == player && board[y-1][x] == player && board[y-2][x] == player && board[y-3][x] == player) {
+        for (int c = 0; c < board.length; c++) {
+            for (int l = 0; l < board.length; l++) {
+               if (board[l][c] == player && board[l-1][c] == player && board[l-2][c] == player && board[l-3][c] == player) {
                     return true;
                 }
             }
         }
         return false;
-    }
-
-    public void testec(int y, int x){
-        System.out.print("Erro");
-    }
-    public void testel(){
-        System.out.print("Erro");
     }
 }
