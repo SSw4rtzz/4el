@@ -26,7 +26,7 @@ package pkg4el.game;
 public class Game {
     int board[][] = new int[6][8];
 
-    //Cria uma matriz 6 por 7 e consuante o jogador e a posição altera-se
+    //Cria uma matriz 6 por 7 e consoante o jogador e a posição altera-se
     public int[][] boardTest(int player, int pos){
     int ocup = 5;
     int peca = 0;
