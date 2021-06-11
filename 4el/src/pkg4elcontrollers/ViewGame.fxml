@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox prefHeight="547.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg4elcontrollers.ControllerGame">
     <children>
@@ -34,21 +35,14 @@
                 <RowConstraints minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-            <Label alignment="CENTER" layoutX="100.0" layoutY="30.0" lineSpacing="8.0" prefHeight="26.0" prefWidth="452.0" text="1" textAlignment="CENTER">
+
+            
+            <Label fx:id="pactive" alignment="CENTER" layoutX="8.0" layoutY="35.0" lineSpacing="8.0" prefHeight="26.0" prefWidth="625.0" text="Jogador 1" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Arial Bold" size="20.0" />
-=======
-            <Label fx:id="pactive" alignment="CENTER" layoutX="8.0" layoutY="34.0" lineSpacing="8.0" prefHeight="26.0" prefWidth="625.0" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="25.0" />
->>>>>>> Stashed changes
+                  <Font size="21.0" />
                </font></Label>
-=======
-            <Label alignment="CENTER" layoutX="8.0" layoutY="14.0" lineSpacing="8.0" prefHeight="26.0" prefWidth="625.0" text="1" textAlignment="CENTER" textFill="WHITE" />
->>>>>>> parent of 4491ad4 (viewgame)
-            <Button fx:id="p1" layoutX="83.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="0">
+
+            <Button layoutX="83.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
@@ -81,12 +75,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-                <Button fx:id="exit" cancelButton="true" layoutX="569.0" layoutY="32.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: #4D4D4D #4D4D4D; -fx-text-fill: #ffffff;" text="Sair" />
-            <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="35.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../pkg4el/assets/back.png" />
-               </image>
-            </ImageView>
+                <Button fx:id="exit" cancelButton="true" layoutX="569.0" layoutY="32.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);" text="x" />
+            <Button layoutX="23.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: rgba(255, 255, 255, 0);" textAlignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pkg4el/assets/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             </children>
         </AnchorPane>
     </children>
