@@ -33,6 +33,7 @@ public class Game {
          for (int l = 0; l < board.length; l++){
             for (int c = 0; c < board.length+1; c++){
                 if(c == pos && peca == 0){
+                    try{
                     if(board[5][pos]==0){
                         board[5][pos] = player;
                         peca = 1; //Indicação de que já foi colocado
@@ -43,6 +44,9 @@ public class Game {
                         };
                         board[ocup][pos]=player;
                         peca = 1;
+                    }
+                    } catch(ArrayIndexOutOfBoundsException exception){
+                        break;
                     }
                 }
             System.out.print(board[l][c] + " "); //imprime caracter a caracter  
@@ -66,8 +70,37 @@ public boolean winner(int player) {
         //checka linhas
         for (int c = 0; c < board.length; c++) {
             for (int l = 0; l < board.length; l++) {
-               if (board[l][c] == player && board[l-1][c] == player && board[l-2][c] == player && board[l-3][c] == player) {
-                    return true;
+                try{
+                    if (board[l][c] == player && board[l-1][c] == player && board[l-2][c] == player && board[l-3][c] == player) {
+                        return true;
+                    }
+                } catch(ArrayIndexOutOfBoundsException exception){
+                    break;
+                }
+               
+            }
+        }
+        //checka diagonal Direita
+        for (int c = 0; c < board.length; c++) {
+            for (int l = 0; l < board.length; l++) {
+                try{
+                    if (board[l][c] == player && board[l-1][c+1] == player && board[l-2][c+2] == player && board[l-3][c+3] == player) {
+                         return true;
+                     }
+                } catch(ArrayIndexOutOfBoundsException exception){
+                        break;
+                    }
+            }
+        }
+        //checka diagonal Esquerda
+        for (int c = 0; c < board.length; c++) {
+            for (int l = 0; l < board.length; l++) {
+               try{
+                    if (board[l][c] == player && board[l-1][c-1] == player && board[l-2][c-2] == player && board[l-3][c-3] == player) {
+                        return true;
+                    }
+                } catch(ArrayIndexOutOfBoundsException exception){
+                    break;
                 }
             }
         }

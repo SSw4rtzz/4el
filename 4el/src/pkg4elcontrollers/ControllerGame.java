@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -41,91 +42,113 @@ public class ControllerGame implements Initializable{
     @FXML
     //Insere as pecas no grid consoante o numero presente no text do botão
     void inserirPecas(ActionEvent event) {
-        Button p1 = (Button) event.getSource();
-        String textButton = p1.getText(); //get texto do botão
+        Button posicao = (Button) event.getSource();
+        String textButton = posicao.getText(); //get texto do botão
         int nButton = Integer.parseInt(textButton); //Numero do botão
             event.getSource();
             
-            //Imprime os botões
+            //Imprime os botões e faz disable a colunas cheias
             switch(nButton){
                 case 0:
-                   
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos1);                    
                     game.boardTest(activePlayer, 0);
                     pos1-=1;
                     changeActivePlayer();
+                    if (pos1<0){
+                        posicao.setDisable(true);
+                    }
                     break;
-                     
+                    
                 case 1:
-                   
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos2);
                     game.boardTest(activePlayer, 1);
                     pos2-=1;
                     changeActivePlayer();
+                    if (pos2<0){
+                        posicao.setDisable(true);
+                    }
                     break;
                     
                 case 2:
-                    
+
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos3);
                     game.boardTest(activePlayer, 2);
                     pos3-=1;
                     changeActivePlayer();
+                    if (pos3<0){
+                        posicao.setDisable(true);
+                    }
                     break;
                     
                 case 3:
-                   
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos4);
                     game.boardTest(activePlayer, 3);
                     pos4-=1;
                     changeActivePlayer();
+                    if (pos4<0){
+                        posicao.setDisable(true);
+                    }
                     break;
                     
                 case 4:
-                    
+
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos5);
                     game.boardTest(activePlayer, 4);
                     pos5-=1;
                     changeActivePlayer();
+                    if (pos5<0){
+                        posicao.setDisable(true);
+                    }
                     break;
                      
                 case 5:
-                    
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos6);
                     game.boardTest(activePlayer, 5);
                     pos6-=1;
                     changeActivePlayer();
+                    if (pos6<0){
+                        posicao.setDisable(true);
+                    }
                     break;
                      
                 case 6:
-                    
-                        root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos7);
-                        game.boardTest(activePlayer, 6);
-                        pos7-=1;
-                        changeActivePlayer();
-                        break;
-                        
+                    root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos7);
+                    game.boardTest(activePlayer, 6);
+                    pos7-=1;
+                    changeActivePlayer();
+                    if (pos7<0){
+                        posicao.setDisable(true);
                     }
+                    break;
                 }
+            }
     
     //Para colocar depois noutra Class
     
-
+    @FXML 
+    private Label pactive;
     //Troca de jogador de forma alternada
     public void changeActivePlayer() {
         if (game.winner(activePlayer)){
-            System.out.print("Jogador " + activePlayer + " ganhou!");
+            pactive.setText("Jogador " + activePlayer + " ganhou!");
         } else if (activePlayer == player1) {
             activePlayer = player2;
             activePlayerColor = player2Color;
+            pactive.setText("Jogador 2");
         } else {
             activePlayer = player1;
             activePlayerColor = player1Color;
+            pactive.setText("Jogador 1");
         }
     }
     
+    
+    
+    
+    
     public void back(ActionEvent event) throws IOException{
         Parent rules = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewMain.fxml"));
-        Scene ruleScene = new Scene(rules, 700,500);
+        Scene ruleScene = new Scene(rules, 900,600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(ruleScene);
         stage.setTitle("4el");
