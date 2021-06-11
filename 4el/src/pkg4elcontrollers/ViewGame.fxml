@@ -35,9 +35,15 @@
                 <RowConstraints minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
+<<<<<<< Updated upstream
             <Label alignment="CENTER" layoutX="100.0" layoutY="30.0" lineSpacing="8.0" prefHeight="26.0" prefWidth="452.0" text="1" textAlignment="CENTER">
                <font>
                   <Font name="Arial Bold" size="20.0" />
+=======
+            <Label fx:id="pactive" alignment="CENTER" layoutX="8.0" layoutY="34.0" lineSpacing="8.0" prefHeight="26.0" prefWidth="625.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+>>>>>>> Stashed changes
                </font></Label>
             <Button fx:id="p1" layoutX="83.0" layoutY="94.0" mnemonicParsing="false" onAction="#inserirPecas" opacity="0.0" prefHeight="396.0" prefWidth="69.0" text="0">
                <cursor>
