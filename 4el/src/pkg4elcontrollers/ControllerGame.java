@@ -1,10 +1,15 @@
 package pkg4elcontrollers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -118,6 +123,14 @@ public class ControllerGame implements Initializable{
         }
     }
     
+    public void back(ActionEvent event) throws IOException{
+        Parent rules = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewMain.fxml"));
+        Scene ruleScene = new Scene(rules, 700,500);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(ruleScene);
+        stage.setTitle("4el");
+        stage.show();
+    }
 
     //Sai do programa
     public Button exit;
