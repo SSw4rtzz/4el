@@ -69,7 +69,6 @@
                </cursor>
             </Button>
                 <Button fx:id="exit" cancelButton="true" layoutX="569.0" layoutY="32.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: #4D4D4D #4D4D4D; -fx-text-fill: #ffffff;" text="Sair" />
-            <Button layoutX="28.0" layoutY="36.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: rgba(255, 255, 255, 0);" textAlignment="CENTER" />
             <ImageView fitHeight="34.0" fitWidth="26.0" layoutX="35.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../pkg4el/assets/back.png" />
