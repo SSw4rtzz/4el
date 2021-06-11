@@ -35,7 +35,7 @@ public class ControllerGame implements Initializable{
     
     @FXML
     //Insere as pecas no grid consoante o numero presente no text do botão
-    void inserirPecas(ActionEvent event){
+    void inserirPecas(ActionEvent event) {
         Button p1 = (Button) event.getSource();
         String textButton = p1.getText(); //get texto do botão
         int nButton = Integer.parseInt(textButton); //Numero do botão
@@ -43,46 +43,46 @@ public class ControllerGame implements Initializable{
             
             //Imprime os botões
             switch(nButton){
-                case 0: 
+                case 0:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos1);                    
                     game.boardTest(activePlayer, 0);
                     pos1-=1;
                     break;
-                case 1: 
+                case 1:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos2);
                     game.boardTest(activePlayer, 1);
                     pos2-=1;
                     break;
-                case 2: 
+                case 2:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos3);
                     game.boardTest(activePlayer, 2);
                     pos3-=1;
                     break;
-                case 3: 
+                case 3:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos4);
                     game.boardTest(activePlayer, 3);
                     pos4-=1;
                     break;
-                case 4: 
+                case 4:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos5);
                     game.boardTest(activePlayer, 4);
                     pos5-=1;
                     break;
-                case 5: 
+                case 5:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos6);
                     game.boardTest(activePlayer, 5);
                     pos6-=1;
                     break;
-                case 6: 
-                    root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos7);
-                    game.boardTest(activePlayer, 6);
-                    pos7-=1;
-                    break;
-                }
-            
+                case 6:
+                    //if(pos7>=0) {
+                        root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos7);
+                        game.boardTest(activePlayer, 6);
+                        pos7-=1;
+                        break;
+                        //}                 
+                    }
             changeActivePlayer();
-        
-    }
+                }
     
     //Para colocar depois noutra Class
     
