@@ -13,20 +13,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import pkg4el.game.Game;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 
 public class ControllerGame implements Initializable{
+    
+    @FXML
+    VBox painelJogo;
+    
+    FileChooser fileChooser = new FileChooser();
     
     @FXML private GridPane root;    
     
@@ -142,9 +143,13 @@ public class ControllerGame implements Initializable{
         }
     }
     
+ 
     
-    
-    
+        public void save(ActionEvent event){
+            game.saveFile();
+        }
+        
+        
     
     public void back(ActionEvent event) throws IOException{
         Parent rules = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewMain.fxml"));
@@ -162,6 +167,8 @@ public class ControllerGame implements Initializable{
     stage.close();
     }
     
-    public void initialize(URL location, ResourceBundle arg1) {}
+    public void initialize(URL location, ResourceBundle arg1) {
+    }
+    
  
 }

@@ -23,6 +23,9 @@
 
 package pkg4el.game;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class Game {
     int board[][] = new int[6][8];
 
@@ -105,5 +108,31 @@ public boolean winner(int player) {
             }
         }
         return false;
+    }
+
+    public void saveFile() {
+        try{
+                PrintWriter writer = new PrintWriter("Jogo.txt", "UTF-8");
+                for (int l = 0; l < board.length; l++) {
+                    for (int c = 0; c < board.length; c++) {
+                        writer.print(board[l][c] + " ");
+                    }
+                    writer.println(" ");
+                }
+                
+            
+                
+                writer.close();
+                
+            }catch(IOException ex){
+            }
+    }
+
+    public void jogo(){
+        for (int c = 0; c < board.length; c++) {
+            for (int l = 0; l < board.length; l++) {
+               
+            }
+        }
     }
 }
