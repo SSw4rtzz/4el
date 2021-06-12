@@ -75,7 +75,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-                <Button fx:id="exit" cancelButton="true" layoutX="569.0" layoutY="32.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);" text="x" />
+                <Button fx:id="exit" cancelButton="true" layoutX="574.0" layoutY="31.0" mnemonicParsing="false" onAction="#exit" prefHeight="22.0" prefWidth="28.0" style="-fx-background-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pkg4el/assets/sair.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Button layoutX="23.0" layoutY="27.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: rgba(255, 255, 255, 0);" textAlignment="CENTER">
                <graphic>
                   <ImageView fitHeight="34.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
