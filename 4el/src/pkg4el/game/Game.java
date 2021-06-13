@@ -22,11 +22,8 @@
 
 
 package pkg4el.game;
-
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 import pkg4elcontrollers.ControllerGame;
 
 public class Game {
@@ -35,7 +32,7 @@ public class Game {
     int activePlayer = 0;
 
     //Cria uma matriz 6 por 7 e consoante o jogador e a posição altera-se
-    public int[][] boardTest(int player, int pos){
+    public int[][] boardF(int player, int pos){
     int ocup = 5;
     int peca = 0;
          for (int l = 0; l < board.length; l++){

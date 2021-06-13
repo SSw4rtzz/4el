@@ -20,7 +20,7 @@
  *                                                                 *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-package pkg4el;
+package pkg4el.game;
 
 
 import java.io.IOException;

@@ -5,8 +5,6 @@
  */
 package pkg4elcontrollers;
 
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -19,8 +17,7 @@ import javafx.stage.Stage;
 
 
 public class ControllerMain {
-
-    ControllerGame controllerGame = new ControllerGame();    
+   
     //Começa jogo
     public void play(ActionEvent event) throws IOException{
         Parent game = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewGame.fxml"));
@@ -44,7 +41,6 @@ public class ControllerMain {
     //Muda de cena para mostrar as regras
     public void rules(ActionEvent event) throws IOException{
         Parent rules = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewRules.fxml"));
-       
         Scene ruleScene = new Scene(rules, 650,600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(ruleScene);
@@ -52,9 +48,13 @@ public class ControllerMain {
         stage.show();
     }
     
-    public void about(){
-        System.out.println("Acerca");
-
+    public void about(ActionEvent event) throws IOException{
+        Parent rules = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewAbout.fxml"));
+        Scene ruleScene = new Scene(rules, 650,600);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(ruleScene);
+        stage.setTitle("Acerca");
+        stage.show();
     }
     
     //Sai do programa - ** Poderia ficar também Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); ** Para decidir ainda
