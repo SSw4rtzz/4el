@@ -17,7 +17,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import pkg4el.game.Game;
 
@@ -26,7 +25,6 @@ public class ControllerGame implements Initializable{
     
     @FXML
     VBox painelJogo;
-    FileChooser fileChooser = new FileChooser();
     
     @FXML public GridPane root;  
     
