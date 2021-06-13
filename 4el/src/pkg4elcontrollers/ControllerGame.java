@@ -1,11 +1,8 @@
 package pkg4elcontrollers;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +26,6 @@ public class ControllerGame implements Initializable{
     
     @FXML
     VBox painelJogo;
-    
     FileChooser fileChooser = new FileChooser();
     
     @FXML public GridPane root;  
@@ -55,7 +51,7 @@ public class ControllerGame implements Initializable{
             switch(nButton){
                 case 0:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos1);                    
-                    game.boardTest(activePlayer, 0);
+                    game.boardF(activePlayer, 0);
                     pos1-=1;
                     changeActivePlayer();
                     if (pos1<0){
@@ -65,7 +61,7 @@ public class ControllerGame implements Initializable{
                     
                 case 1:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos2);
-                    game.boardTest(activePlayer, 1);
+                    game.boardF(activePlayer, 1);
                     pos2-=1;
                     changeActivePlayer();
                     if (pos2<0){
@@ -75,7 +71,7 @@ public class ControllerGame implements Initializable{
                     
                 case 2:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos3);
-                    game.boardTest(activePlayer, 2);
+                    game.boardF(activePlayer, 2);
                     pos3-=1;
                     changeActivePlayer();
                     if (pos3<0){
@@ -85,7 +81,7 @@ public class ControllerGame implements Initializable{
                     
                 case 3:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos4);
-                    game.boardTest(activePlayer, 3);
+                    game.boardF(activePlayer, 3);
                     pos4-=1;
                     changeActivePlayer();
                     if (pos4<0){
@@ -95,7 +91,7 @@ public class ControllerGame implements Initializable{
                     
                 case 4:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos5);
-                    game.boardTest(activePlayer, 4);
+                    game.boardF(activePlayer, 4);
                     pos5-=1;
                     changeActivePlayer();
                     if (pos5<0){
@@ -105,7 +101,7 @@ public class ControllerGame implements Initializable{
                      
                 case 5:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos6);
-                    game.boardTest(activePlayer, 5);
+                    game.boardF(activePlayer, 5);
                     pos6-=1;
                     changeActivePlayer();
                     if (pos6<0){
@@ -115,7 +111,7 @@ public class ControllerGame implements Initializable{
                      
                 case 6:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos7);
-                    game.boardTest(activePlayer, 6);
+                    game.boardF(activePlayer, 6);
                     pos7-=1;
                     changeActivePlayer();
                     if (pos7<0){
@@ -124,8 +120,6 @@ public class ControllerGame implements Initializable{
                     break;
                 }
             }
-    
-    //Para colocar depois noutra Class
     
     @FXML 
     private Label pactive;
@@ -144,6 +138,7 @@ public class ControllerGame implements Initializable{
         }
     }
 
+    //Volta a trás no programa
     public void back(ActionEvent event) throws IOException{
         game.saveFile();
         Parent rules = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewMain.fxml"));

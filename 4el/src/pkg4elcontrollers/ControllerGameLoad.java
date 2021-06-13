@@ -55,7 +55,7 @@ public class ControllerGameLoad implements Initializable{
             switch(nButton){
                 case 0:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos1);                    
-                    game.boardTest(activePlayer, 0);
+                    game.boardF(activePlayer, 0);
                     pos1-=1;
                     changeActivePlayer();
                     if (pos1<0){
@@ -65,7 +65,7 @@ public class ControllerGameLoad implements Initializable{
                     
                 case 1:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos2);
-                    game.boardTest(activePlayer, 1);
+                    game.boardF(activePlayer, 1);
                     pos2-=1;
                     changeActivePlayer();
                     if (pos2<0){
@@ -75,7 +75,7 @@ public class ControllerGameLoad implements Initializable{
                     
                 case 2:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos3);
-                    game.boardTest(activePlayer, 2);
+                    game.boardF(activePlayer, 2);
                     pos3-=1;
                     changeActivePlayer();
                     if (pos3<0){
@@ -85,7 +85,7 @@ public class ControllerGameLoad implements Initializable{
                     
                 case 3:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos4);
-                    game.boardTest(activePlayer, 3);
+                    game.boardF(activePlayer, 3);
                     pos4-=1;
                     changeActivePlayer();
                     if (pos4<0){
@@ -95,7 +95,7 @@ public class ControllerGameLoad implements Initializable{
                     
                 case 4:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos5);
-                    game.boardTest(activePlayer, 4);
+                    game.boardF(activePlayer, 4);
                     pos5-=1;
                     changeActivePlayer();
                     if (pos5<0){
@@ -105,7 +105,7 @@ public class ControllerGameLoad implements Initializable{
                      
                 case 5:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos6);
-                    game.boardTest(activePlayer, 5);
+                    game.boardF(activePlayer, 5);
                     pos6-=1;
                     changeActivePlayer();
                     if (pos6<0){
@@ -115,7 +115,7 @@ public class ControllerGameLoad implements Initializable{
                      
                 case 6:
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos7);
-                    game.boardTest(activePlayer, 6);
+                    game.boardF(activePlayer, 6);
                     pos7-=1;
                     changeActivePlayer();
                     if (pos7<0){
@@ -184,32 +184,32 @@ public class ControllerGameLoad implements Initializable{
                            switch(c){
                             case 0:
                                 root.add(new Circle(200, 200, 25, activePlayerColor), 0, pos1);                    
-                                game.boardTest(activePlayer, 0);
+                                game.boardF(activePlayer, 0);
                                 pos1-=1;
                                 break;
 
                             case 1:
                                 root.add(new Circle(200, 200, 25, activePlayerColor), 1, pos2);
-                                game.boardTest(activePlayer, 1);
+                                game.boardF(activePlayer, 1);
                                 pos2-=1;
                                 break;
 
                             case 2:
                                 root.add(new Circle(200, 200, 25, activePlayerColor), 2, pos3);
-                                game.boardTest(activePlayer, 2);
+                                game.boardF(activePlayer, 2);
                                 pos3-=1;
                                 break;
 
                             case 3:
                                 root.add(new Circle(200, 200, 25, activePlayerColor), c, pos4);
-                                game.boardTest(activePlayer, 3);
+                                game.boardF(activePlayer, 3);
                                 pos4-=1;
                                 changeActivePlayer();
                                 break;
 
                             case 4:
                                 root.add(new Circle(200, 200, 25, activePlayerColor), c, pos5);
-                                game.boardTest(activePlayer, 4);
+                                game.boardF(activePlayer, 4);
                                 pos5-=1;
                                 changeActivePlayer();
 
@@ -217,7 +217,7 @@ public class ControllerGameLoad implements Initializable{
 
                             case 5:
                                 root.add(new Circle(200, 200, 25, activePlayerColor), c, pos6);
-                                game.boardTest(activePlayer, 5);
+                                game.boardF(activePlayer, 5);
                                 pos6-=1;
                                 changeActivePlayer();
 
@@ -225,7 +225,7 @@ public class ControllerGameLoad implements Initializable{
 
                             case 6:
                                 root.add(new Circle(200, 200, 25, activePlayerColor), c, pos7);
-                                game.boardTest(activePlayer, 6);
+                                game.boardF(activePlayer, 6);
                                 pos7-=1;
                                 changeActivePlayer();
 
