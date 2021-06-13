@@ -25,7 +25,7 @@ import javafx.stage.Stage;
 import pkg4el.game.Game;
 
 
-public class ControllerGame implements Initializable{
+public class ControllerGameLoad implements Initializable{
     
     @FXML
     VBox painelJogo;
@@ -163,6 +163,90 @@ public class ControllerGame implements Initializable{
     }
     
     public void initialize(URL location, ResourceBundle arg1) {
+        int countPlayer1 = 0; int countPlayer2 = 0;
+        try (Scanner scanner = new Scanner(new File("Jogo.txt"))) {
+            while (scanner.hasNext()){
+                for (int l = 0; l < 6; l++) {
+                    for (int c = 0; c < 7; c++) {
+                        var h = scanner.nextInt();
+                        System.out.print(h + " ");
+                        activePlayer = h;
+
+                        if (activePlayer == 1){
+                            activePlayerColor = Color.BLUE;
+                            countPlayer1++;
+                        } else if(activePlayer == 2){
+                            activePlayerColor = Color.RED;
+                            countPlayer2++;
+                        }
+
+                        if(h != 0){
+                           switch(c){
+                            case 0:
+                                root.add(new Circle(200, 200, 25, activePlayerColor), 0, pos1);                    
+                                game.boardTest(activePlayer, 0);
+                                pos1-=1;
+                                break;
+
+                            case 1:
+                                root.add(new Circle(200, 200, 25, activePlayerColor), 1, pos2);
+                                game.boardTest(activePlayer, 1);
+                                pos2-=1;
+                                break;
+
+                            case 2:
+                                root.add(new Circle(200, 200, 25, activePlayerColor), 2, pos3);
+                                game.boardTest(activePlayer, 2);
+                                pos3-=1;
+                                break;
+
+                            case 3:
+                                root.add(new Circle(200, 200, 25, activePlayerColor), c, pos4);
+                                game.boardTest(activePlayer, 3);
+                                pos4-=1;
+                                changeActivePlayer();
+                                break;
+
+                            case 4:
+                                root.add(new Circle(200, 200, 25, activePlayerColor), c, pos5);
+                                game.boardTest(activePlayer, 4);
+                                pos5-=1;
+                                changeActivePlayer();
+
+                                break;
+
+                            case 5:
+                                root.add(new Circle(200, 200, 25, activePlayerColor), c, pos6);
+                                game.boardTest(activePlayer, 5);
+                                pos6-=1;
+                                changeActivePlayer();
+
+                                break;
+
+                            case 6:
+                                root.add(new Circle(200, 200, 25, activePlayerColor), c, pos7);
+                                game.boardTest(activePlayer, 6);
+                                pos7-=1;
+                                changeActivePlayer();
+
+                                break;
+                            }
+                        }
+                    }
+                    System.out.println(" ");
+                }
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        if(countPlayer1<=countPlayer2){
+            System.out.println(countPlayer1 + " - " + countPlayer2);
+                activePlayer = 1;
+                activePlayerColor = Color.BLUE;
+            } else {
+                activePlayer = 2;
+                activePlayerColor = Color.RED;
+            }
     }
  
 }

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="painelJogo" prefHeight="547.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg4elcontrollers.ControllerGame">
+<VBox fx:id="painelJogo" prefHeight="547.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg4elcontrollers.ControllerGameLoad">
     <children>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="591.0" prefWidth="640.0" style="-fx-background-color: #979692;" VBox.vgrow="ALWAYS">
             <children>

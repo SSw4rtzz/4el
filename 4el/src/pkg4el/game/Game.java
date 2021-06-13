@@ -123,47 +123,15 @@ public boolean winner(int player) {
     public void saveFile() {
         try{
             PrintWriter writer = new PrintWriter("Jogo.txt", "UTF-8");
-            for (int l = 0; l < board.length; l++) {
+            for (int l = board.length-1; l >= 0; l--) {
                 for (int c = 0; c < board[l].length; c++) {
                     writer.print(board[l][c] + " ");
                 }
                 writer.println(" ");
             }  
-        writer.close();
+            writer.close();
         } catch(IOException ex) {
             System.out.print("Erro ao gravar o jogo");
-        }
-    }
-    
-    //Carrega o jogo tal como este está presente no ficheiro Jogo.txt
-    public void loadFile(){   
-        /*controllerGame = new ControllerGame();
-        try (Scanner scanner = new Scanner(new File("Jogo.txt"))) {
-
-        while (scanner.hasNext())
-            for (int l = 0; l < board.length; l++) {
-                for (int c = 0; c < board.length; c++) {
-                    //activePlayer = Integer.parseInt(scanner.next());
-                    
-                    controllerGame.loadPieces();
-                    
-                    System.out.print(scanner.next() + " ");
-                }
-                System.out.println(" ");
-            }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }*/
-    }
-        
-    
-
-    public void savedGame(){
-        for (int c = 0; c < board.length; c++) {
-            for (int l = 0; l < board.length; l++) {
-               
-            }
         }
     }
 }

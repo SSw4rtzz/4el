@@ -20,35 +20,41 @@ import javafx.stage.Stage;
 
 public class ControllerMain {
 
+    ControllerGame controllerGame = new ControllerGame();    
     //Começa jogo
     public void play(ActionEvent event) throws IOException{
         Parent game = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewGame.fxml"));
-        Scene gameScene = new Scene(game, 900,600);
+        Scene gameScene = new Scene(game, 650,600);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(gameScene);
+        stage.setTitle("Jogar");
+        stage.show();
+    }
+   
+    //Carrega jogo guardado
+    public void playLoad(ActionEvent event) throws IOException{
+        Parent game = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewGameLoad.fxml"));
+        Scene gameScene = new Scene(game, 650,600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(gameScene);
         stage.setTitle("Jogar");
         stage.show();
     }
     
-    public void about(){
-        System.out.println("Acerca");
-
-    }
-    
     //Muda de cena para mostrar as regras
     public void rules(ActionEvent event) throws IOException{
         Parent rules = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewRules.fxml"));
        
-        Scene ruleScene = new Scene(rules, 900,600);
+        Scene ruleScene = new Scene(rules, 650,600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(ruleScene);
         stage.setTitle("Regras");
         stage.show();
     }
     
-    public void credits(){
-        System.out.println("Creditos");
-        
+    public void about(){
+        System.out.println("Acerca");
+
     }
     
     //Sai do programa - ** Poderia ficar também Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); ** Para decidir ainda

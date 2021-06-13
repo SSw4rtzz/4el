@@ -37,7 +37,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
             //Chama o ficheiro do cenário e cria o cenário
             Parent main = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewMain.fxml"));
-            Scene mainScene = new Scene(main, 900,600);
+            Scene mainScene = new Scene(main, 650,600);
             stage.setScene(mainScene);
             stage.setTitle("4el");
             stage.show();
