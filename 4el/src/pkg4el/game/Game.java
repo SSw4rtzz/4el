@@ -29,7 +29,7 @@ import pkg4elcontrollers.ControllerGame;
 public class Game {
     public int board[][] = new int[6][7];
     ControllerGame controllerGame;
-    int activePlayer = 0;
+    private int activePlayer = 0;
 
     //Cria uma matriz 6 por 7 e consoante o jogador e a posição altera-se
     public int[][] boardF(int player, int pos){

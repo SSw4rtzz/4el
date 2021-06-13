@@ -26,10 +26,10 @@ public class ControllerGame implements Initializable{
     @FXML
     VBox painelJogo;
     
-    @FXML public GridPane root;  
+    @FXML public GridPane root;
     
     Game game = new Game();
-    int pos1=5; int pos2=5; int pos3=5; int pos4=5; int pos5=5; int pos6=5; int pos7=5; //Posição de jogo
+    private int pos1=5; int pos2=5; int pos3=5; int pos4=5; int pos5=5; int pos6=5; int pos7=5; //Posição de jogo
     
     Paint player1Color = Color.BLUE;
     Paint player2Color = Color.RED;

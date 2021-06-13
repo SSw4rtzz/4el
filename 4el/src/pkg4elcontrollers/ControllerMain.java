@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pkg4elcontrollers;
 
 import java.io.IOException;
@@ -57,7 +53,7 @@ public class ControllerMain {
         stage.show();
     }
     
-    //Sai do programa - ** Poderia ficar também Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); ** Para decidir ainda
+    //Sai do programa
     public Button exit;
     public void exit(ActionEvent event) {
     Stage stage = (Stage) exit.getScene().getWindow();

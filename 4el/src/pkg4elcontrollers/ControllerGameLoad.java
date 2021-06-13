@@ -1,7 +1,6 @@
 package pkg4elcontrollers;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,7 +19,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import pkg4el.game.Game;
 
@@ -29,8 +27,6 @@ public class ControllerGameLoad implements Initializable{
     
     @FXML
     VBox painelJogo;
-    
-    FileChooser fileChooser = new FileChooser();
     
     @FXML public GridPane root;  
     
@@ -125,7 +121,7 @@ public class ControllerGameLoad implements Initializable{
                 }
             }
     
-    //Para colocar depois noutra Class
+    
     
     @FXML 
     private Label pactive;
