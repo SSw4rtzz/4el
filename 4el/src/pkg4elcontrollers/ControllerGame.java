@@ -1,8 +1,11 @@
 package pkg4elcontrollers;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +32,7 @@ public class ControllerGame implements Initializable{
     
     FileChooser fileChooser = new FileChooser();
     
-    @FXML private GridPane root;    
+    @FXML public GridPane root;  
     
     Game game = new Game();
     int pos1=5; int pos2=5; int pos3=5; int pos4=5; int pos5=5; int pos6=5; int pos7=5; //Posição de jogo
@@ -71,7 +74,6 @@ public class ControllerGame implements Initializable{
                     break;
                     
                 case 2:
-
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos3);
                     game.boardTest(activePlayer, 2);
                     pos3-=1;
@@ -92,7 +94,6 @@ public class ControllerGame implements Initializable{
                     break;
                     
                 case 4:
-
                     root.add(new Circle(200, 200, 25, activePlayerColor), nButton, pos5);
                     game.boardTest(activePlayer, 4);
                     pos5-=1;
@@ -143,14 +144,168 @@ public class ControllerGame implements Initializable{
         }
     }
     
- 
-    
+        //Guarda o jogo num ficheiro txt com a matriz
         public void save(ActionEvent event){
             game.saveFile();
         }
         
+        public void load(ActionEvent event){
+            int countPlayer1 = 0; int countPlayer2 = 0;
+            
+            
+        try (Scanner scanner = new Scanner(new File("Jogo.txt"))) {
         
-    
+        while (scanner.hasNext()){
+         
+            
+
+            for (int l = 0; l < 6; l++) {
+                for (int c = 0; c < 7; c++) {
+                    var h = scanner.nextInt();
+                    System.out.print(h + " ");
+                    activePlayer = h;
+                    
+                    if (activePlayer == 1){
+                        activePlayerColor = Color.BLUE;
+                        countPlayer1++;
+                    } else {
+                        activePlayerColor = Color.RED;
+                        countPlayer2++;
+                    }
+                    
+                    if(h != 0){
+                       switch(c){
+                
+                        case 0:
+                            root.add(new Circle(200, 200, 25, activePlayerColor), 0, pos1);                    
+                            game.boardTest(activePlayer, 0);
+                            pos1-=1;
+                            break;
+                            
+                            
+                        case 1:
+                            root.add(new Circle(200, 200, 25, activePlayerColor), 1, pos2);
+                            game.boardTest(activePlayer, 1);
+                            pos2-=1;
+                            break;
+                            
+                        case 2:
+                            root.add(new Circle(200, 200, 25, activePlayerColor), 2, pos3);
+                            game.boardTest(activePlayer, 2);
+                            pos3-=1;
+                            break;
+                            
+                        case 3:
+                            root.add(new Circle(200, 200, 25, activePlayerColor), c, pos4);
+                            game.boardTest(activePlayer, 3);
+                            pos4-=1;
+                            changeActivePlayer();
+                            break;
+                    
+                        case 4:
+                            root.add(new Circle(200, 200, 25, activePlayerColor), c, pos5);
+                            game.boardTest(activePlayer, 4);
+                            pos5-=1;
+                            changeActivePlayer();
+
+                            break;
+
+                        case 5:
+                            root.add(new Circle(200, 200, 25, activePlayerColor), c, pos6);
+                            game.boardTest(activePlayer, 5);
+                            pos6-=1;
+                            changeActivePlayer();
+
+                            break;
+
+                        case 6:
+                            root.add(new Circle(200, 200, 25, activePlayerColor), c, pos7);
+                            game.boardTest(activePlayer, 6);
+                            pos7-=1;
+                            changeActivePlayer();
+
+                            break;
+
+                        }
+                    }
+                    
+                    if(countPlayer1>countPlayer2 || countPlayer1==countPlayer2){
+                        activePlayer = 1;
+                    } else {
+                        activePlayer = 2;
+                    }
+                }
+                System.out.println(" ");
+            }
+        }
+        
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        }
+        
+        
+        public void loadPieces(){
+            int c = 0;
+            //Imprime os botões e faz disable a colunas cheias
+            switch(c){
+                
+                case 0:
+                    root.add(new Circle(200, 200, 25, activePlayerColor), c, 1);                    
+                    game.boardTest(1, 0);
+                    //pos1-=1;
+                    changeActivePlayer();
+                    
+                    break;
+           
+        }}
+                    
+                /*
+                    
+                case 2:
+                    root.add(new Circle(200, 200, 25, activePlayerColor), c, pos3);
+                    game.boardTest(activePlayer, 2);
+                    pos3-=1;
+                    changeActivePlayer();
+                    
+                    break;
+                    
+                case 3:
+                    root.add(new Circle(200, 200, 25, activePlayerColor), c, pos4);
+                    game.boardTest(activePlayer, 3);
+                    pos4-=1;
+                    changeActivePlayer();
+                    
+                    break;
+                    
+                case 4:
+                    root.add(new Circle(200, 200, 25, activePlayerColor), c, pos5);
+                    game.boardTest(activePlayer, 4);
+                    pos5-=1;
+                    changeActivePlayer();
+                    
+                    break;
+                     
+                case 5:
+                    root.add(new Circle(200, 200, 25, activePlayerColor), c, pos6);
+                    game.boardTest(activePlayer, 5);
+                    pos6-=1;
+                    changeActivePlayer();
+                    
+                    break;
+                     
+                case 6:
+                    root.add(new Circle(200, 200, 25, activePlayerColor), c, pos7);
+                    game.boardTest(activePlayer, 6);
+                    pos7-=1;
+                    changeActivePlayer();
+                    
+                    break;
+            }
+    }*/
+
+     
     public void back(ActionEvent event) throws IOException{
         Parent rules = FXMLLoader.load(getClass().getResource("/pkg4elcontrollers/ViewMain.fxml"));
         Scene ruleScene = new Scene(rules, 900,600);
@@ -169,6 +324,5 @@ public class ControllerGame implements Initializable{
     
     public void initialize(URL location, ResourceBundle arg1) {
     }
-    
  
 }

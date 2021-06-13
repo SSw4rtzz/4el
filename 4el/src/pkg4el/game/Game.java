@@ -23,23 +23,28 @@
 
 package pkg4el.game;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
+import pkg4elcontrollers.ControllerGame;
 
 public class Game {
-    int board[][] = new int[6][8];
+    public int board[][] = new int[6][7];
+    ControllerGame controllerGame;
+    int activePlayer = 0;
 
     //Cria uma matriz 6 por 7 e consoante o jogador e a posição altera-se
     public int[][] boardTest(int player, int pos){
     int ocup = 5;
     int peca = 0;
          for (int l = 0; l < board.length; l++){
-            for (int c = 0; c < board.length+1; c++){
+            for (int c = 0; c < board[l].length; c++){
                 if(c == pos && peca == 0){
                     try{
                     if(board[5][pos]==0){
                         board[5][pos] = player;
-                        peca = 1; //Indicação de que já foi colocado
+                        peca = 1; //Indicação de que já foi colocado não volta a entrar nestes ciclos e imprime apenas a board
                       // Procura inserir a peça num espaço livre da mesma coluna
                     } else if(peca == 0) {
                         while(board[ocup][pos]!=0){
@@ -65,8 +70,12 @@ public boolean winner(int player) {
         //checka colunas
         for (int l = 0; l < board.length; l++) {
             for (int c = 0; c < board[l].length; c++) {
+                try{
                 if (board[l][c] == player && board[l][c+1] == player && board[l][c+2] == player && board[l][c+3] == player) {
                         return true;
+                }
+                } catch(ArrayIndexOutOfBoundsException exception){
+                    break;
                 }
             }
         }
@@ -110,25 +119,47 @@ public boolean winner(int player) {
         return false;
     }
 
+    //Guarda a matriz do jogo atual num ficheiro Jogo.txt
     public void saveFile() {
         try{
-                PrintWriter writer = new PrintWriter("Jogo.txt", "UTF-8");
-                for (int l = 0; l < board.length; l++) {
-                    for (int c = 0; c < board.length; c++) {
-                        writer.print(board[l][c] + " ");
-                    }
-                    writer.println(" ");
+            PrintWriter writer = new PrintWriter("Jogo.txt", "UTF-8");
+            for (int l = 0; l < board.length; l++) {
+                for (int c = 0; c < board[l].length; c++) {
+                    writer.print(board[l][c] + " ");
                 }
-                
-            
-                
-                writer.close();
-                
-            }catch(IOException ex){
-            }
+                writer.println(" ");
+            }  
+        writer.close();
+        } catch(IOException ex) {
+            System.out.print("Erro ao gravar o jogo");
+        }
     }
+    
+    //Carrega o jogo tal como este está presente no ficheiro Jogo.txt
+    public void loadFile(){   
+        /*controllerGame = new ControllerGame();
+        try (Scanner scanner = new Scanner(new File("Jogo.txt"))) {
 
-    public void jogo(){
+        while (scanner.hasNext())
+            for (int l = 0; l < board.length; l++) {
+                for (int c = 0; c < board.length; c++) {
+                    //activePlayer = Integer.parseInt(scanner.next());
+                    
+                    controllerGame.loadPieces();
+                    
+                    System.out.print(scanner.next() + " ");
+                }
+                System.out.println(" ");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }*/
+    }
+        
+    
+
+    public void savedGame(){
         for (int c = 0; c < board.length; c++) {
             for (int l = 0; l < board.length; l++) {
                
